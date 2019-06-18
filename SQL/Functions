@@ -1,0 +1,24 @@
+-- função que verifica se o nome é nulo ou não --
+CREATE OR REPLACE FUNCTION inclu_pet() RETURNS trigger AS
+$$
+BEGIN
+if new.raca is not null THEN
+RETURN new;
+else RETURN null;
+End if;
+END;
+$$
+LANGUAGE 'plpgsql' ;
+
+-- função que adiciona mais um no total dos pets --
+CREATE OR REPLACE FUNCTION qtd_pet() RETURNS int AS
+$$
+DECLARE
+soma int;
+BEGIN
+SELECT COUNT(id_pet) INTO soma
+FROM pet;
+RETURN soma;
+END;
+$$
+LANGUAGE 'plpgsql' ;
