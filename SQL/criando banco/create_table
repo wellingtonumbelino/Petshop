@@ -1,0 +1,50 @@
+CREATE TABLE cliente(
+nome varchar(50),
+cpf varchar(20),
+data_nasc varchar(20),
+bairro varchar(50),
+rua varchar(50),
+num_casa integer,
+telefone varchar(20),
+CONSTRAINT cliente_pkey PRIMARY KEY(cpf)
+);
+
+CREATE TABLE pet(
+id_pet serial not null,
+nome_pet varchar(50),
+raca varchar(50),
+cor varchar(50),
+observacoes varchar(100),
+cpf_cliente varchar(20),
+CONSTRAINT pet_pkey PRIMARY KEY(id_pet),
+CONSTRAINT pet_fkey FOREIGN KEY(cpf_cliente) REFERENCES cliente(cpf)
+);
+
+CREATE TABLE produto (
+id_prod integer,
+nome_prod varchar(50),
+CONSTRAINT produto_pkey PRIMARY KEY(id_prod)
+);
+
+CREATE TABLE servico(
+id_serv integer,
+nome_serv varchar(50),
+valor_serv real,
+CONSTRAINT servico_pkey PRIMARY KEY(id_serv)
+);
+
+CREATE TABLE trabalhando(
+id_pet_ser integer,
+id_prod_ser integer,
+id_ser integer,
+CONSTRAINT trabalhando_pkey PRIMARY KEY(id_pet_ser, id_prod_ser, id_ser),
+CONSTRAINT trabalhando_fkey FOREIGN KEY(id_pet_ser) REFERENCES pet(id_pet),
+FOREIGN KEY(id_prod_ser) REFERENCES produto(id_prod),
+FOREIGN KEY(id_ser) REFERENCES servico(id_serv)
+);
+
+CREATE TABLE login (
+usuario varchar(100),
+senha varchar(100),
+CONSTRAINT login_pkey PRIMARY KEY(usuario, senha)
+);
