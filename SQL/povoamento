@@ -1,0 +1,108 @@
+--povoamento da tabela CLIENTE (1)
+
+INSERT INTO cliente (nome, cpf, data_nasc, rua, bairro, num_casa, telefone)
+VALUES ('Dudu', '123456', '21/06/1994', 'Monge', 'Centro', 1987, '9 9999-9999');
+
+INSERT INTO cliente (nome, cpf, data_nasc, rua, bairro, num_casa, telefone)
+VALUES ('Antonio', '566879', '28/08/1997', 'São Paulo', 'Campinas', 657, '9 3333-2948');
+
+INSERT INTO cliente (nome, cpf, data_nasc, rua, bairro, num_casa, telefone)
+VALUES ('Dedé', '879123', '30/10/1995', 'Feira', 'São Mateus', 987, '9 9786-1332');
+
+--povoamento da tabela PET (2)
+
+INSERT INTO pet (id_pet, nome_pet, raca, cor, observacoes, cpf_cliente)
+VALUES (1, 'Rex', 'Pastor Alemão', 'Pardo', null, '123456');
+
+INSERT INTO pet (id_pet, nome_pet, raca, cor, observacoes, cpf_cliente)
+VALUES (2, 'Fofo', 'Vira-lata', 'Preto', 'alergico a pasta de amendoim', '123456');
+
+INSERT INTO pet (id_pet, nome_pet, raca, cor, observacoes, cpf_cliente)
+VALUES (3, 'Dente de Sabre', 'Vira-Lata', 'Laranja', null, '566879');
+
+INSERT INTO pet (id_pet, nome_pet, raca, cor, observacoes, cpf_cliente)
+VALUES (4, 'Brock', 'São Bernado', 'Marrom', 'gosta de correr', '879123');
+
+INSERT INTO pet (id_pet, nome_pet, raca, cor, observacoes, cpf_cliente)
+VALUES (5, 'Mãezinha', 'Pudle', 'Branca', 'Colocar os laços', '879123');
+
+
+--povoamento da tabela PRODUTO (3)
+
+INSERT INTO produto (id_prod, nome_prod) VALUES (1, 'Shapoo');
+INSERT INTO produto (id_prod, nome_prod) VALUES (2, 'Perfume');
+INSERT INTO produto (id_prod, nome_prod) VALUES (3, 'Laço');
+INSERT INTO produto (id_prod, nome_prod) VALUES (4, 'Fita');
+INSERT INTO produto (id_prod, nome_prod) VALUES (5, 'Escova de dentes');
+INSERT INTO produto (id_prod, nome_prod) VALUES (6, 'Escova para pelos');
+INSERT INTO produto (id_prod, nome_prod) VALUES (7, 'Cortador de unhas');
+INSERT INTO produto (id_prod, nome_prod) VALUES (8, 'Oléo para pele');
+INSERT INTO produto (id_prod, nome_prod) VALUES (9, 'Bolas de borracha');
+INSERT INTO produto (id_prod, nome_prod) VALUES (10, 'Coleira');
+
+
+--povoamento da tabela LOGIN (4)
+
+INSERT INTO login (usuario, senha) VALUES ('login', 'senha');
+INSERT INTO login (usuario, senha) VALUES ('login', 'senha');
+
+--povoamento da tabela SERVICO (5)
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (1, 'Banho', 10.0);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (2, 'Transporte', 20.0);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (3, 'Escovação e branqueamento dos dentes', 100.0);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (4, 'Tratamento para problemas de pele', 200.0);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (5, 'Tosa', 15.0);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (6, 'Cortar unhas', 25.7);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (7, 'Castração', 95.6);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (8, 'Desencarrapatamento', 60.0);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (9, 'Passear com pet', 20.0);
+
+INSERT INTO servico (id_serv, nome_serv, valor_serv)
+VALUES (10, 'Adestramento', 90.0);
+
+--povoamento da tabela TRABALHANDO (6)
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (2, 10, 8);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (3, 3, 5);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (1, 9, 10);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (4, 1, 1);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (4, 2, 1);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (4, 6, 1);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (4, 7, 1);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (5, 3, 5);
+
+INSERT INTO trabalhando (id_pet_ser, id_prod_ser, id_ser)
+VALUES (5, 4, 5);
