@@ -1,0 +1,4 @@
+CREATE VIEW usuarios (clientes, cpf_cliente, qtd_pet) AS
+SELECT c.nome, c.cpf, COUNT(id_pet) FROM cliente c, pet p
+WHERE c.cpf = p.cpf_cliente
+GROUP BY C.nome, c.cpf
